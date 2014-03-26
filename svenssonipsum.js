@@ -65,7 +65,7 @@ var svensson = svensson || {};
 		return (lastChar === "." || lastChar === "," || lastChar === "!" || lastChar === "?")
 	}
 	
-	//generate a paragraph, i.e. a bit more than 512 characters
+	//generate a paragraph, i.e. between 500 and 1000 characters
 	function GetParagraph(){
 			console.log("Start generating a paragraphs");
 			
@@ -75,7 +75,7 @@ var svensson = svensson || {};
 			var paragraph = "";
 			var newSentence = true;
 			
-			while(paragraph.length < 512){
+			while(paragraph.length < paragraphLength){
 				var phrase = GetRandomPhrase();
 				//First letter to upper if new sentence
 				if (newSentence){
