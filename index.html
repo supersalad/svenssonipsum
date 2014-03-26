@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Svensson Ipsum</title>
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="svenssonipsum.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="svenssonipsum.js"></script>
+<script src="index.js"></script>
+</head>
+<body>
+<header class="navbar navbar-static-top si-navbar" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".si-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="index.html" class="navbar-brand">Hem</a>
+    </div>
+    <nav class="collapse navbar-collapse si-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="about.html">Om</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="si-docs-header" id="content">
+  <div class="container">
+	<h1>Svensson Ipsum</h1>
+	<p>Lorem Ipsum generering på svenska. Här får du harmlös text på svenska för utfyllnad.</p>
+
+  </div>
+</div>
+
+<div class="container si-main-content">
+	<div class="row">
+		<div class="col-sm-2">
+			<form role="form">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Hur många stycken?</label>
+					<input type="number" class="form-control" id="numberOfParagraphs" value="4">
+				</div>
+				<div class="form-group">
+					<button id="generate" class="btn btn-lg btn-default">Ge mig!</button>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-10">
+			<form role="form">
+				<div class="form-group">
+					<textarea class="form-control" id="output" rows="40"></textarea>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
