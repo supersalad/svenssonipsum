@@ -2,34 +2,21 @@ var svensson = svensson || {};
 
 (function(svensson) {
       
-	  
-	  //create list of phrases:
-	  var loremIpsum = "Lorem ipsum dolor sit amet";
 	  var separator = ",";
 	  
+	  //create list of phrases:
 	  var svenssonPhrases = new Array();
 	  
-	  svenssonPhrases.push("vad hette det sa du?");
-	  svenssonPhrases.push("va, vi bor i Mjölby");
-	  svenssonPhrases.push("jo du så att");
-	  svenssonPhrases.push("efter regn kommer solsken");
-	  svenssonPhrases.push("upp som en sol ner som en pannkaka");
-	  svenssonPhrases.push("vilket väder vi har fått");
-	  svenssonPhrases.push("tack för senast");
-	  svenssonPhrases.push("tack för kaffet");
-	  svenssonPhrases.push("vilket gott kaffe");
-	  svenssonPhrases.push("rummen lämnas klockan 12 och väskorna lämnas i receptionen");
-	  svenssonPhrases.push("finns det svenskt kaffe på hotellet?");
-	  svenssonPhrases.push("strålande tider, härliga tider");
-	  svenssonPhrases.push("surt sa räven");
-	  svenssonPhrases.push("och hon ser ut som hon öppnat sin senaste elräkning");
-	  svenssonPhrases.push("glöm aldrig bort det!");
-	  svenssonPhrases.push("gudars skymning!");
-	  svenssonPhrases.push("ååh så söt hon är");
-	  svenssonPhrases.push("vi har en blandning av loppisfynd och ikea");
-	  svenssonPhrases.push("han har charm som en karl, han är fräck som en karl, nonchalant som en karl och han rööör sig som en karl ska.");
-	  svenssonPhrases.push("skulle du vilja vara så vänlig och fylla i den här blanketten");
-	  svenssonPhrases.push("Sverige, vi har ett resultat!");
+	  //get phrases from text files
+	  $.ajax({
+		url: "svenssonphrases.txt",
+		crossDomain: true,
+		dataType: "text",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		success: function(data){
+				svenssonPhrases = data.split("\n");
+				}
+			});
 
 	var lastRandomIndex = -1;
 	  //get a random phrase from the collection
@@ -41,22 +28,44 @@ var svensson = svensson || {};
 			}
 			lastRandomIndex = randomIndex;
 			var phrase = svenssonPhrases[randomIndex].trim();
-			//if phrase doesn't end with punctuation - add a comma.
-			var lastChar = phrase.charAt(phrase.length - 1); 
-			if (lastChar !== "." && lastChar !== "," && lastChar !== "!" && lastChar !== "?"){
-				phrase += separator;
-			}
-			//add a space
-			phrase += " ";
+			
 			return phrase;
 	  }
-	  
+	 
+	//return true if the phrase ends with punctuation
+	function PhraseEndsWithPunctuation(phrase){
+		var lastChar = phrase.charAt(phrase.length - 1); 
+		return (lastChar === "." || lastChar === "," || lastChar === "!" || lastChar === "?")
+	}
+	
 	//generate a paragraph, i.e. a bit more than 512 characters
 	function GetParagraph(){
 			console.log("Start generating a paragraphs");
+			
+			//random paragraph length between 500 and 1000 chars
+			var paragraphLength = 500 + Math.floor(Math.floor(Math.random() * 500));
+			
 			var paragraph = "";
+			var newSentence = true;
+			
 			while(paragraph.length < 512){
-				paragraph += GetRandomPhrase();
+				var phrase = GetRandomPhrase();
+				//First letter to upper if new sentence
+				if (newSentence){
+					phrase = phrase.charAt(0).toUpperCase() + phrase.substring(1);
+					newSentence = false;
+				}
+				
+				if (!PhraseEndsWithPunctuation(phrase)){
+					phrase += separator;
+				}
+				else{
+					newSentence = true;
+				}
+				phrase += " ";
+				
+				paragraph += phrase;
+				
 			}
 			console.log("Finished generating a paragraphs");
 			return paragraph.trim();
