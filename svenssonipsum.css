@@ -1,5 +1,5 @@
 html { 
-  background: url(img/bohuslan.jpg) no-repeat center center fixed; 
+  background: url(http://afolkesson.ownit.nu/svenssonipsum/img/bohuslan.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,10 +11,22 @@ body{
 	color: #fff;
 }
 
+a:link {color:#fff;}      /* unvisited link */
+a:visited {color:#fff;}  /* visited link */
+a:hover {color:#f0f0f0;}  /* mouse over link */
+a:active {color:#fff;}  /* selected link */
+
+
+.si-navbar a:link {color:#222222;}      /* unvisited link */
+.si-navbar a:visited {color:#222222;}  /* visited link */
+.si-navbar a:hover {color:#111111;text-decoration:none;}  /* mouse over link */
+.si-navbar a:active {color:#222222;}  /* selected link */
+
 .si-navbar
 {
+padding-top: 20px;
 margin-bottom: 0;
-background-color: #FFD938;
+/*background-color: #FFD938;*/
 border-bottom: 0;
 }
 
@@ -27,4 +39,31 @@ text-align: left;
 
 .si-main-content{
 padding-top: 20px;
+}
+
+.si-about{
+color: #222222;
+padding: 10px;
+background-color: #fff;
+}
+
+.si-about a:link {color:#222222; text-decoration:underline;}      /* unvisited link */
+.si-about a:visited {color:#222222;}  /* visited link */
+.si-about a:hover {color:#111111;}  /* mouse over link */
+.si-about a:active {color:#222222;}  /* selected link */
+
+.si-footer{
+	padding-top: 40px;
+	padding-bottom: 20px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.si-footer-buttons{
+	display: inline-block;
+}
+.si-footer-buttons li{
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
 }
