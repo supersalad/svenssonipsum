@@ -84,7 +84,9 @@ var svensson = svensson || {};
 				}
 				
 				if (!PhraseEndsWithPunctuation(phrase)){
-					phrase += separator;
+					//add comma if phrase is more than one word
+					if (phrase.indexOf(" ") > -1)
+						phrase += separator;
 				}
 				else{
 					newSentence = true;
