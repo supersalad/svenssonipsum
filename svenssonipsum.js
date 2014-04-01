@@ -65,9 +65,15 @@ var svensson = svensson || {};
 		return (lastChar === "." || lastChar === "," || lastChar === "!" || lastChar === "?")
 	}
 	
+	//return true if the phrase ends with comma
+	function PhraseEndsWithComma(phrase){
+		var lastChar = phrase.charAt(phrase.length - 1); 
+		return (lastChar === separator)
+	}
+	
 	//generate a paragraph, i.e. between 500 and 1000 characters
 	function GetParagraph(){
-			console.log("Start generating a paragraphs");
+			//console.log("Start generating a paragraphs");
 			
 			//random paragraph length between 500 and 1000 chars
 			var paragraphLength = 500 + Math.floor(Math.floor(Math.random() * 500));
@@ -96,7 +102,14 @@ var svensson = svensson || {};
 				paragraph += phrase;
 				
 			}
-			console.log("Finished generating a paragraphs");
+			
+			//console.log("Finished generating a paragraphs");
+			//ensure paragrah ends with puntuation
+			paragraph = paragraph.trim();
+			if (PhraseEndsWithComma(paragraph)){
+				paragraph = paragraph.substr(0,paragraph.length-1) + ".";
+			}
+			
 			return paragraph.trim();
 	  }
 	  
