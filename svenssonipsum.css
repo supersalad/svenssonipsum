@@ -1,5 +1,6 @@
 html { 
-  background: url(http://afolkesson.ownit.nu/svenssonipsum/img/bohuslan.jpg) no-repeat center center fixed; 
+  /*background: url(http://afolkesson.ownit.nu/svenssonipsum/img/bohuslan.jpg) no-repeat center center fixed; */
+  background: url(http://upload.wikimedia.org/wikipedia/commons/8/84/Risudden_liten_r%C3%B6d_stuga--Me%C3%A4nmaa.JPG) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,10 +18,10 @@ a:hover {color:#f0f0f0;}  /* mouse over link */
 a:active {color:#fff;}  /* selected link */
 
 
-.si-navbar a:link {color:#222222;}      /* unvisited link */
-.si-navbar a:visited {color:#222222;}  /* visited link */
-.si-navbar a:hover {color:#111111;text-decoration:none;}  /* mouse over link */
-.si-navbar a:active {color:#222222;}  /* selected link */
+.Xsi-navbar a:link {color:#222222;}      /* unvisited link */
+.Xsi-navbar a:visited {color:#222222;}  /* visited link */
+.Xsi-navbar a:hover {color:#111111;text-decoration:none;}  /* mouse over link */
+.Xsi-navbar a:active {color:#222222;}  /* selected link */
 
 .si-navbar
 {
