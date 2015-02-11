@@ -1,0 +1,8 @@
+html { 
+  /*background: url(http://afolkesson.ownit.nu/svenssonipsum/img/bohuslan.jpg) no-repeat center center fixed; */
+  background: url(http://afolkesson.ownit.nu/img/Villa_villekulla.jpg) no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
