@@ -1,4 +1,3 @@
 RewriteEngine On
-asölkjf asdfiia dfkalsljhf ösj
-RewriteBase /
+RewriteBase /svenssonipsum
 RewriteRule . /index.php [L]

@@ -26,18 +26,28 @@ class Ipsum extends CI_Controller {
 		$counter = 0;
 		$svenssonpath = getcwd() . '/application/svenssonipsum';
 		
-		if ($handle = opendir($svenssonpath)) {
-
-			/* This is the correct way to loop over the directory. */
-			while (false !== ($entry = readdir($handle))) {
-				if ($entry != "." && $entry != ".." && $entry != "default" && is_dir($svenssonpath . "/" . $entry)){
-					$flavours[$counter] = ucfirst($entry);
-					$counter++;
-				}
+		//scan the folders in the svenssonipsum folder
+		$folders = scandir($svenssonpath);
+		foreach ($folders as &$folder) {
+			if ($folder != "." && $folder != ".." && $folder != "default" && is_dir($svenssonpath . "/" . $folder)){
+				$flavours[$counter] = ucfirst($folder;
+				$counter++;
 			}
-
-			closedir($handle);
 		}
+
+		// if ($handle = opendir($svenssonpath)) {
+
+
+		// 	/* This is the correct way to loop over the directory. */
+		// 	while (false !== ($entry = readdir($handle))) {
+		// 		if ($entry != "." && $entry != ".." && $entry != "default" && is_dir($svenssonpath . "/" . $entry)){
+		// 			$flavours[$counter] = ucfirst($entry);
+		// 			$counter++;
+		// 		}
+		// 	}
+
+		// 	closedir($handle);
+		// }
 		
 		//$flavours = getcwd();
 		

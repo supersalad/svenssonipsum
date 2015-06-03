@@ -114,6 +114,9 @@
 		<div>
 			<ul class="si-footer-buttons">
 				<li>
+					<a href="https://facebook.com/sharer.php?u=http://www.svenssonipsum.se/<?php echo $flavour ?>">Facebook</a>
+				</li>
+				<li>
 					<iframe src="http://ghbtns.com/github-btn.html?user=supersalad&repo=svenssonipsum&type=fork"
   allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
 				</li>
